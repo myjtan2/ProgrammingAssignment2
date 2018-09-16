@@ -1,5 +1,5 @@
 library(Matrix)
-
+##Create cache matrix
 makeMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y) {
@@ -13,10 +13,10 @@ makeMatrix <- function(x = matrix()) {
        setinverse = setinverse,
        getinverse = getinverse)
 }
-
+##invert matrix
 cacheInvert <- function(x, ...) {
   inv <- x$getinverse()
-  if(!is.null(inv)) {
+  if(!is.null(inv)) {       ##look for cache data
     message("getting cached data")
     return(inv)
   }
